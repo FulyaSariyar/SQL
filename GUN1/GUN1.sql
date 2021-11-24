@@ -1,5 +1,6 @@
 -- DDL (Create Alter Drop) DML (insert-update-delete select*)
 
+
 SELECT 'WISSEN' 
 SELECT LOWER('WISSEN')
 SELECT UPPER('wissen')
