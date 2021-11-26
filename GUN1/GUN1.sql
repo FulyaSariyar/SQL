@@ -114,4 +114,3 @@ FROM Orders O
 --WHERE (CustomerID='DUMON' OR CustomerID ='ALFKI') AND EmployeeID =1 AND (ShipVia = 1 OR ShipVia=3)
 WHERE CustomerID IN('DUMON','ALFKI') AND EmployeeID = 1 AND ShipVia IN(1,3)
 
--- SUBQUERY
