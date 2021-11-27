@@ -73,5 +73,47 @@ WHERE CompanyName='Fulya Sarýyar Abdullah'
 SELECT* --Silindigini görmek icin listeleyiniz.
 FROM Shippers
 
+--Select Top kullanimi
+--Employees tablosunda ilk 5 kaydi listeleyiniz.
+SELECT TOP 5*
+FROM Employees
+
+--SQL Like Kullanimi
+--Customers tablosunda bulunan CompanyName'i B ile baslayanlari listeleyiniz.
+ SELECT *
+ FROM Customers
+ WHERE CompanyName LIKE 'B%'
+
+--Customers tablosunda bulunan CompanyName'i B ile bitenleri listeleyiniz.
+ SELECT *
+ FROM Customers
+ WHERE CompanyName LIKE '%B'
+
+--Customers tablosunda bulunan ContactName icerisinde 'ton' bulunanlari listeleyiniz.
+SELECT *
+FROM Customers
+WHERE ContactName LIKE '%TON%'
 
 
+--SQL IN KULLANIMI
+--Suppliers tablosunda city London ve Tokyo olan kayitlari listeleyiniz.
+SELECT *
+FROM Suppliers
+WHERE City IN ('London', 'Tokyo')
+
+--SQL BETWEEN KULLANÝMÝ(Sayi metin yada tarih araliði verilebilir.)
+--Siparis tablosunda EmployeeID 3 ve 6 arasinda olanlari listeleyiniz.
+SELECT *
+FROM Orders
+WHERE EmployeeID BETWEEN 3 AND 6 --3 ve 6 dahildir.
+
+--Siparis tablosunda OrderDate '1996.07.04' ve '1998.04.27' arasinda olanlari listeleyiniz.
+SELECT *
+FROM Orders
+WHERE OrderDate BETWEEN '1996.07.04' AND '1998.04.27' 
+
+--SQL AS KULLANIMI
+--Customer tablosunda bulunan ContactName sutununa gecici bir ad veriniz.
+SELECT ContactName AS Ad
+FROM Customers
+ 
