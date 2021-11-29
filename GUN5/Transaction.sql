@@ -44,6 +44,7 @@ begin
 	COMMIT TRAN HavaleTran
 		END TRY
 		BEGIN CATCH
+		ROLLBACK TRAN HavaleTran
 			print (ERROR_MESSAGE())
 		END CATCH
 end
@@ -51,6 +52,6 @@ end
 select * from Hesaplar
 
 exec sp_havale_yap 2,3,1500
-exec sp_havale_yap 23,1,5000
-exec sp_havale_yap 1,23,5000000
+exec sp_havale_yap 23,1,50
+exec sp_havale_yap 1,23,500
 
