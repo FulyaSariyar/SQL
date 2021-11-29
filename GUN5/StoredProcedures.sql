@@ -24,3 +24,9 @@ BEGIN
 END
 
 EXEC SP_KATEGORI_URUN 'Beverages','Ayran',5
+
+EXEC SP_KATEGORI_URUN 'Elektronik','Telefon',5000
+SELECT C.CategoryName,P.ProductName,p.UnitPrice
+FROM Products P
+JOIN Categories C ON C.CategoryID=P.ProductID
+order by ProductID desc
