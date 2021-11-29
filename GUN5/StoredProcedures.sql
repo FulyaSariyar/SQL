@@ -2,7 +2,7 @@
 --EGER GIRILEN KATEGORIDE BIR KATEGORI YOKSA EKLESIN VARSA O KATEGORI IDSI ILE URUN EKLESIN (FIYAT)
 
 
-CREATE PROCEDURE SP_KATEGORI_URUN 
+ALTER PROCEDURE SP_KATEGORI_URUN 
 @CategoryName nvarchar(15),
 @ProductName nvarchar(40),
 @UnitPrice money
@@ -19,6 +19,8 @@ BEGIN
     ELSE 
 	INSERT INTO Products(ProductName,UnitPrice,CategoryID) VALUES 
 				(@ProductName,@UnitPrice,@CatId)
-	PRINT(@@identity+'idli urun eklenmistir.')
+	PRINT(CAST(@@identity AS NVARCHAR(150))+'idli urun eklenmistir.')
   
 END
+
+EXEC SP_KATEGORI_URUN 'Beverages','Ayran',5
